@@ -11,7 +11,6 @@
 
 int main(int argc, char *argv[]) {
 
-    App app;
     memset(&app, 0, sizeof(App));
     initSDL();
     atexit(cleanup);
