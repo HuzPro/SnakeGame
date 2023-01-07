@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 
     snake.x = 100;
     snake.y = 100;
-    snake.texture = loadTexture("images/snake/head-right.png");
+    snake.texture = loadTexture("images/snake/head-large.png");
 
     atexit(cleanup);
 
