@@ -16,6 +16,7 @@ int main(int argc, char *argv[]) {
     memset(&snake, 0, sizeof(Snake));
     initSDL();
 	
+	snake.speed = 3;
 	snake.direction = 0;
     snake.x = 200;
     snake.y = 200;
@@ -44,16 +45,16 @@ int main(int argc, char *argv[]) {
         
         switch(snake.direction){
         	case 1:
-        		snake.y -= 3;
+        		snake.y -= snake.speed;
         		break;
         	case 2:
-        		snake.y += 3;
+        		snake.y += snake.speed;
         		break;
         	case 3:
-        		snake.x -= 3;
+        		snake.x -= snake.speed;
         		break;
         	case 4:
-        		snake.x += 3;
+        		snake.x += snake.speed;
         		break;
         	default:
         		break;
