@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
     memset(&snake, 0, sizeof(Snake));
     initSDL();
 	
+	snake.angle=0;
 	snake.speed = 3;
 	snake.direction = 0;
     snake.x = 200;
