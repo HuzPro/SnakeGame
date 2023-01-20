@@ -10,6 +10,7 @@ typedef struct {
 } App;
 
 typedef struct {
+	int direction; //1 = up ^, 2 = down v, 3 = left <, 4 = right >
     int x;
     int y;
     SDL_Texture *texture;
@@ -17,4 +18,3 @@ typedef struct {
 
 App app;
 Snake snake;
-
