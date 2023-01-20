@@ -13,7 +13,7 @@ void blit(SDL_Texture *texture, int x, int y) {
     dest.y = y;
     SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
 
-    SDL_RenderCopy(app.renderer, texture, NULL, &dest);
+    SDL_RenderCopyEx(app.renderer, texture, NULL, &dest, snake.angle, NULL, SDL_FLIP_NONE );
 }
 
 void prepareScene() {
