@@ -15,7 +15,8 @@ int main(int argc, char *argv[]) {
     memset(&app, 0, sizeof(App));
     memset(&snake, 0, sizeof(Snake));
     initSDL();
-
+	
+	snake.direction = 0;
     snake.x = 200;
     snake.y = 200;
     snake.texture = loadTexture("images/snake/head-large.png");
@@ -26,19 +27,38 @@ int main(int argc, char *argv[]) {
         prepareScene();
 
         input();
-
-        if(app.up){
-            snake.y -= 3;
+		
+		//SnakeMovement
+        if(app.up && !app.down && !app.left && !app.right){
+            if (snake.direction != 2) snake.direction = 1;
         }
-        if(app.down){
-            snake.y += 3;
+        if(app.down && !app.left && !app.right && !app.up){
+            if(snake.direction != 1)snake.direction = 2;
         }
-        if(app.left){
-            snake.x -= 3;
+        if(app.left && !app.right && !app.up && !app.down){
+            if(snake.direction != 4)snake.direction = 3;
         }
-        if(app.right){
-            snake.x += 3;
+        if(app.right && !app.left && !app.up && !app.down){
+            if(snake.direction != 3)snake.direction = 4;
         }
+        
+        switch(snake.direction){
+        	case 1:
+        		snake.y -= 3;
+        		break;
+        	case 2:
+        		snake.y += 3;
+        		break;
+        	case 3:
+        		snake.x -= 3;
+        		break;
+        	case 4:
+        		snake.x += 3;
+        		break;
+        	default:
+        		break;
+		}
+		//EndOfSnakeMovement
 
         blit(snake.texture, snake.x, snake.y);
 
