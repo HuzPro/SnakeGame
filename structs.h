@@ -14,6 +14,7 @@ typedef struct {
     int x;
     int y;
     int speed;
+    int angle;
     SDL_Texture *texture;
 } Snake;
 
