@@ -6,14 +6,25 @@ SDL_Texture *loadTexture(char *image) {
     return texture;
 }
 
-void blit(SDL_Texture *texture, int x, int y) {
+void initTextures() {
+    memset(&textures, 0, sizeof(Textures));
+    textures.head = loadTexture("images/snake/head-small.png");
+    textures.body = loadTexture("images/snake/body.png");
+    textures.tail = loadTexture("images/snake/tail.png");
+    textures.turn = loadTexture("images/snake/turn.png");
+    textures.apple = loadTexture("images/snake/apple.png");
+}
+
+
+void blit(SDL_Texture *texture, int x, int y, int w, int h, double angle) {
     SDL_Rect dest;
 
     dest.x = x;
     dest.y = y;
-    SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
+    dest.w = w;
+    dest.h = h;
 
-    SDL_RenderCopyEx(app.renderer, texture, NULL, &dest, snake.angle, NULL, SDL_FLIP_NONE);
+    SDL_RenderCopyEx(app.renderer, texture, NULL, &dest, angle, NULL, SDL_FLIP_NONE);
 }
 
 void prepareScene() {
