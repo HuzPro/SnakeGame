@@ -4,6 +4,8 @@ void initSDL(void){
 	rendererFlags = SDL_RENDERER_ACCELERATED;
 	windowFlags = 0;
 
+	
+
 	if (SDL_Init(SDL_INIT_VIDEO) < 0){
 		printf("Failed to initialize SDL: %s\n", SDL_GetError());
 		exit(1);
@@ -15,6 +17,14 @@ void initSDL(void){
 		printf("Failed to create %dx%d window: %s\n", SCREEN_WIDTH, SCREEN_HEIGHT, SDL_GetError());
 		exit(1);
 	}
+
+	SDL_Surface *iconSurface = IMG_Load("images/icon.png");
+	if (iconSurface == NULL) {
+    	printf("Error loading icon\n");
+	}
+
+	SDL_SetWindowIcon(app.window, iconSurface);
+	SDL_FreeSurface(iconSurface);
 
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 	app.renderer = SDL_CreateRenderer(app.window, -1, rendererFlags);
