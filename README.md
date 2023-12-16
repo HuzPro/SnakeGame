@@ -38,7 +38,8 @@ This project showcases a Snake game developed using the SDL2 library in C. The g
 3. Compile the game:
 
     ```bash
-    gcc -std=c99 main.c -I SDL2 -L lib -Wall -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -o main
+    gcc -std=c99 main.c -I SDL2 -L lib -Wall -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -mwindows -o main.exe
+
     ```
 
 
