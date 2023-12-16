@@ -57,9 +57,6 @@ Use arrow keys to control the snake and mouse to navigate the menu.
 - Arrow keys: Move the snake
 - Escape key: Open/close menu
 
-
-Absolutely, you can update the README to include a section about collaboration and attributions:
-
 ### Game Controls
 
 - Arrow keys: Move the snake
