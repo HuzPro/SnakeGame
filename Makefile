@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall
-LINKS = -lSDL2 -lSDL2_image
-OUTFILE = snake
+LINKS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf
+OUTFILE = main
 INFILE = main.c
 
 snake: 
